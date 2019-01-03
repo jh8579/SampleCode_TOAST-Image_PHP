@@ -67,9 +67,9 @@ function delete_multi_file($IMAGEURL, $APPKEY, $SECRETKEY, $data){
     return $response;
 };
 
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $folder_id = '3fffa007-c214-47dc-a275-e79839d19bd4';      // (필수) 삭제할 폴더의 ID
 $file_id = '8e49dd0b-4974-4125-93e6-a15c1cb44252';        // (필수) 삭제할 파일의 ID
@@ -85,8 +85,8 @@ $folder_ids = '';
 $file_ids = '';
 
 foreach($folder_list as $value)          // 파라미터 형식에 맞게 변경(string 형태에 콤마로 구분)
-    $folder_ids .= $value.',';   
-  $folder_ids = trim($folder_ids, ','); // 마지막 , 제거
+  $folder_ids .= $value.',';   
+$folder_ids = trim($folder_ids, ','); // 마지막 , 제거
 
 foreach($file_list as $value)           // 파라미터 형식에 맞게 변경(string 형태에 콤마로 구분)
   $file_ids .= $value.',';   

@@ -49,9 +49,9 @@ function put_realtime($IMAGEURL, $APPKEY, $SECRETKEY, $data) {
     return $response;
 };
 
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $realtime_service = 'true';                      // (필수) 실시간 서비스 제공 여부
 

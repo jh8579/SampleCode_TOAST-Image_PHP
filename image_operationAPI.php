@@ -142,9 +142,9 @@ function delete_operation($IMAGEURL, $APPKEY, $SECRETKEY, $operation_id, $data){
     return $response;
 }
 
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $operation_id = '100x100';                      // (필수) 생성할 폴더의 절대 경로, 상위 폴더 자동 생성
 $description = '100x100 크기 변환';                              //
@@ -213,6 +213,6 @@ echo "Response :  $response <br/><br/>\n";
 $response = execute_operation($IMAGEURL, $APPKEY, $SECRETKEY, $execute_operation_option);
 echo "Response :  $response <br/><br/>\n";
 
-#$response = delete_operation($IMAGEURL, $APPKEY, $SECRETKEY, $operation_id, $delete_operation_option);
+$response = delete_operation($IMAGEURL, $APPKEY, $SECRETKEY, $operation_id, $delete_operation_option);
 echo "Response :  $response <br/><br/>\n";
 

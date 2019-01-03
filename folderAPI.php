@@ -16,10 +16,10 @@ function post_folder($IMAGEURL, $APPKEY, $SECRETKEY, $path) {
   $curl  = curl_init($url); // curl 초기화
 
   curl_setopt_array($curl, array(
-    CURLOPT_SSL_VERIFYPEER => FALSE,      // SSL 인증X
-    CURLOPT_POST => TRUE,                // 메소드 정의
-    CURLOPT_RETURNTRANSFER => TRUE,       // 리턴 값 출력
-    CURLOPT_HTTPHEADER => $req_header,    // 헤더 추가
+    CURLOPT_SSL_VERIFYPEER => FALSE,              // SSL 인증X
+    CURLOPT_POST => TRUE,                         // 메소드 정의
+    CURLOPT_RETURNTRANSFER => TRUE,               // 리턴 값 출력
+    CURLOPT_HTTPHEADER => $req_header,            // 헤더 추가
     CURLOPT_POSTFIELDS => json_encode($req_body)  // json 형식 변환
   )); // curl 설정
 
@@ -86,9 +86,10 @@ function get_folder($IMAGEURL, $APPKEY, $SECRETKEY, $path){
 
   return $response;
 }
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
+
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $path = '/dddd';       // (필수) 생성할 폴더의 절대 경로, 상위 폴더 자동 생성
 

@@ -23,9 +23,9 @@ function get_task($IMAGEURL, $APPKEY, $SECRETKEY, $queue_id){
   return $response;
 };
 
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $queue_id = '6691a01a-4585-4e26-989c-8ef25dd627a0';     // (필수) 조회할 작업 고유 ID
 

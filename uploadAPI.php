@@ -64,11 +64,11 @@ function upload_multi_file($IMAGEURL, $APPKEY, $SECRETKEY, $data) {
   $curl  = curl_init($url); // curl 초기화
 
   curl_setopt_array($curl, array(
-    CURLOPT_SSL_VERIFYPEER => FALSE,      // SSL 인증X
-    CURLOPT_POST => TRUE,                // 메소드 정의
-    CURLOPT_RETURNTRANSFER => TRUE,       // 리턴 값 출력
-    CURLOPT_HTTPHEADER => $req_header,    // 헤더 추가
-    CURLOPT_POSTFIELDS => $post_data  // json 형식 변환
+    CURLOPT_SSL_VERIFYPEER => FALSE,        // SSL 인증X
+    CURLOPT_POST => TRUE,                   // 메소드 정의
+    CURLOPT_RETURNTRANSFER => TRUE,         // 리턴 값 출력
+    CURLOPT_HTTPHEADER => $req_header,      // 헤더 추가
+    CURLOPT_POSTFIELDS => $post_data        // json 형식 변환
   )); // curl 설정
 
   $response = curl_exec($curl); // API 호출
@@ -104,9 +104,9 @@ function build_data_files($boundary, $fields, $files){      // multipart 형식�
     return $data;
 };
 
-/////////////// git add 전에 제외!!!!!! //////////////////////////////
 $IMAGEURL = 'https://api-image.cloud.toast.com/image/v2.0/appkeys/';
-/////////////////////////////////////////////////////////////////////
+$APPKEY = '{APP_KEY}';
+$SECRETKEY = '{SECRET_KEY}';
 
 $basepath = '/';                    // (필수) 생성할 폴더의 절대 경로, 상위 폴더 자동 생성
 $file_name = 'sample.png';          // (필수) 단일 업로드할 파일명
@@ -119,10 +119,10 @@ $callback_url='';                   // (선택) 처리 결과를 통보받을 �
 
 $operaion_ids = '';
 foreach($operation_list as $value)          // 파라미터 형식에 맞게 변경(string 형태에 콤마로 구분)
-    $operaion_ids .= $value.',';   
-  $operaion_ids = trim($operaion_ids, ','); // 마지막 , 제거
+  $operaion_ids .= $value.',';   
+$operaion_ids = trim($operaion_ids, ','); // 마지막 , 제거
 
-$upload_one_file_option = array(        // 단일 파일 업로드 API 파라미터 목록
+$upload_one_file_option = array(            // 단일 파일 업로드 API 파라미터 목록
   'path' => $path,
   'overwrite' => $overwrite,
   'autorename' => $autorename,
